@@ -1,0 +1,38 @@
+{% extends 'base.html'%}
+
+
+{%block title%}Login{%endblock%}
+
+
+
+{% block content%}
+	
+<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 offset-lg-2 offset-md-1 float-md-center">
+	<div class="jumbotron float-md-center" align="center">
+
+		<form method="POST" accept-charset="utf-8">
+			{% csrf_token %}
+			
+			<div class="form-group">
+   				 <label for="formGroupExampleInput">Username</label>
+   				 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Username" name='username'>
+  			</div>
+
+			<div class="form-group">
+   				 <label for="formGroupExampleInput">Password</label>
+   				 <input type="password" class="form-control" id="formGroupExampleInput" placeholder="Enter Password" name='pass1'>
+  			</div>
+			
+			 <button type="submit" class="btn btn-primary">Submit</button>
+						
+			
+		</form>
+
+
+	</div>
+</div>
+
+
+
+{% endblock%}
+	

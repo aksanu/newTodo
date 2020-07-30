@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+
+
+{%block title%} {%endblock%}
+
+
+
+{% block content%}
+<div class="col-lg-8 col-md-10 col-sm-12 col-xs-12 offset-lg-2 offset-md-1 float-md-center">
+	<div class="jumbotron float-md-center" align="center">
+
+		<form method="POST" accept-charset="utf-8">
+			{% csrf_token %}
+
+			<div class="form-group">
+   				 <label for="formGroupExampleInput">Title</label>
+   				 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter a Title" name='title'>
+  			</div>
+
+			<div class="form-group">
+			    <label for="exampleFormControlTextarea1">Description</label>
+			    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter a Description" name='desc'></textarea>
+			 </div>
+
+			 <button type="submit" class="btn btn-primary">Submit</button>
+						
+			
+		</form>
+
+
+	</div>
+</div>
+
+
+
+{% endblock%}
+	

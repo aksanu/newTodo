@@ -1,0 +1,49 @@
+{% extends 'base.html'%}
+
+
+{%block title%} {%endblock%}
+
+
+
+{% block content%}
+		
+		
+		{{t.desc}}
+		
+
+
+		<table class="table table-hover table-dark">
+			{% if todo%}
+			
+		  <thead>
+		    <tr>
+		      <th scope="col">#</th>
+		      <th scope="col">Title</th>
+		      <th scope="col">Description</th>
+		      <th scope="col">Action</th>
+		      
+		    </tr>
+		  </thead>
+		    <tbody>
+		    	{% for t in todo%}
+			    <tr>
+			      <th scope="row">{{forloop.counter}}</th>
+			      <td>{{t.title}}</td>
+			      <td>{{t.desc}}</td>
+			      
+			      <td><a href="{% url 'update' t.id%}" title="">Update</a> / <a href="{% url 'delete' t.id%}" title="">Delete</a></td>
+			      
+			    </tr>
+	  			{%endfor%}
+ 			</tbody>
+ 			{%else %}
+ 			<div class="alert alert-primary" role="alert" align="center">
+			  No Todo record Found <a href="{% url 'create' %}" class="alert-link">Create Todo</a>. Give it a click if you like.
+			</div>
+ 			{%endif%}
+		</table>
+
+		
+		
+{% endblock%}
+	
